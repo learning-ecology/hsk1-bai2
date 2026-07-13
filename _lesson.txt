@@ -1,0 +1,121 @@
+const LESSON = {
+  title:"我叫李文", pinyin:"Wǒ jiào Lǐ Wén", en:"My name is Li Wen",
+  level:"HSK 1", duration:"120 phút",
+  objectives:[
+    {vi:"Nghe hiểu và dùng tên tiếng Trung để tự giới thiệu bản thân.",
+     en:"Understand others’ self-introductions and introduce oneself using a Chinese name."},
+    {vi:"Nghe hiểu và dùng cách xin lỗi: nói “对不起” để xin lỗi và đáp lại bằng “没关系”.",
+     en:"Understand and use expressions of apology: say “对不起” to apologize and respond with “没关系”."},
+    {vi:"Nắm được trật tự từ cơ bản trong tiếng Hán.",
+     en:"Master the basic word order in Chinese."},
+    {vi:"Hiểu cấu tạo tên người Trung Quốc (họ + tên).",
+     en:"Understand the structure of Chinese names."}
+  ],
+  // ------- TỪ VỰNG (15 từ mới) -------
+  words:[
+    {id:"w1", han:"请问", py:"qǐngwèn", pos:"động từ · v.", vi:"xin hỏi; cho hỏi", en:"excuse me; may I ask",
+      ex:{han:"请问，你叫什么名字？", py:"Qǐngwèn, nǐ jiào shénme míngzi?", vi:"Cho hỏi, bạn tên là gì?", en:"May I ask, what’s your name?"}},
+    {id:"w2", han:"你", py:"nǐ", pos:"đại từ · pron.", vi:"bạn", en:"(singular) you",
+      ex:{han:"你好！", py:"Nǐ hǎo!", vi:"Chào bạn!", en:"Hello!"}},
+    {id:"w3", han:"叫", py:"jiào", pos:"động từ · v.", vi:"gọi là; tên là", en:"be called as",
+      ex:{han:"我叫陈天中。", py:"Wǒ jiào Chén Tiānzhōng.", vi:"Tôi tên là Trần Thiên Trung.", en:"My name is Chen Tianzhong."}},
+    {id:"w4", han:"什么", py:"shénme", pos:"đại từ · pron.", vi:"gì; cái gì", en:"what",
+      ex:{han:"你叫什么名字？", py:"Nǐ jiào shénme míngzi?", vi:"Bạn tên là gì?", en:"What’s your name?"}},
+    {id:"w5", han:"名字", py:"míngzi", pos:"danh từ · n.", vi:"tên", en:"name",
+      ex:{han:"你叫什么名字？", py:"Nǐ jiào shénme míngzi?", vi:"Bạn tên là gì?", en:"What’s your name?"}},
+    {id:"w6", han:"我", py:"wǒ", pos:"đại từ · pron.", vi:"tôi; tớ", en:"I; me",
+      ex:{han:"我叫李文。", py:"Wǒ jiào Lǐ Wén.", vi:"Tôi tên là Lý Văn.", en:"My name is Li Wen."}},
+    {id:"w7", han:"不", py:"bù", pos:"phó từ · adv.", vi:"không", en:"not; no",
+      ex:{han:"我不是安妮。", py:"Wǒ bú shì Ānnī.", vi:"Tôi không phải An Ni.", en:"I’m not Annie."}},
+    {id:"w8", han:"是", py:"shì", pos:"động từ · v.", vi:"là", en:"be",
+      ex:{han:"我是白家月。", py:"Wǒ shì Bái Jiāyuè.", vi:"Tôi là Bạch Gia Nguyệt.", en:"I am Bai Jiayue."}},
+    {id:"w9", han:"对不起", py:"duìbuqǐ", pos:"động từ · v.", vi:"xin lỗi", en:"sorry",
+      ex:{han:"对不起！", py:"Duìbuqǐ!", vi:"Xin lỗi!", en:"Sorry!"}},
+    {id:"w10", han:"没关系", py:"méi guānxi", pos:"cụm · phr.", vi:"không sao; đừng bận tâm", en:"that’s all right; never mind",
+      ex:{han:"没关系！", py:"Méi guānxi!", vi:"Không sao!", en:"It’s okay!"}},
+    {id:"w11", han:"没事", py:"méishì", pos:"động từ · v.", vi:"không sao đâu", en:"it doesn’t matter",
+      ex:{han:"没事，没事！", py:"Méishì, méishì!", vi:"Không sao, không sao!", en:"It’s fine, it’s fine!"}},
+    {id:"w12", han:"很", py:"hěn", pos:"phó từ · adv.", vi:"rất", en:"very",
+      ex:{han:"很高兴认识你。", py:"Hěn gāoxìng rènshi nǐ.", vi:"Rất vui được làm quen với bạn.", en:"Nice to meet you."}},
+    {id:"w13", han:"高兴", py:"gāoxìng", pos:"tính từ · adj.", vi:"vui; vui mừng", en:"glad; happy",
+      ex:{han:"认识你很高兴。", py:"Rènshi nǐ hěn gāoxìng.", vi:"Được biết bạn rất vui.", en:"Happy to know you."}},
+    {id:"w14", han:"认识", py:"rènshi", pos:"động từ · v.", vi:"quen biết; làm quen", en:"know; become acquainted with",
+      ex:{han:"很高兴认识你。", py:"Hěn gāoxìng rènshi nǐ.", vi:"Rất vui được làm quen với bạn.", en:"Nice to meet you."}},
+    {id:"w15", han:"也", py:"yě", pos:"phó từ · adv.", vi:"cũng", en:"also; too",
+      ex:{han:"认识你我也很高兴。", py:"Rènshi nǐ wǒ yě hěn gāoxìng.", vi:"Được làm quen với bạn tôi cũng rất vui.", en:"Nice to meet you too."}}
+  ],
+  // ------- HÁN TỰ (23 chữ) · gif=null => hiển thị placeholder. Dán Base64 Data URI để thêm GIF. -------
+  chars:[
+    {c:"请", py:"qǐng", vi:"mời; xin", en:"please; request", strokes:10, gif:null},
+    {c:"问", py:"wèn", vi:"hỏi", en:"to ask", strokes:6, gif:null},
+    {c:"你", py:"nǐ", vi:"bạn", en:"you", strokes:7, gif:null},
+    {c:"叫", py:"jiào", vi:"gọi; kêu", en:"to call", strokes:5, gif:null},
+    {c:"什", py:"shén", vi:"gì (什么)", en:"what (什么)", strokes:4, gif:null},
+    {c:"么", py:"me", vi:"(trợ từ)", en:"(particle)", strokes:3, gif:null},
+    {c:"名", py:"míng", vi:"tên", en:"name", strokes:6, gif:null},
+    {c:"字", py:"zì", vi:"chữ", en:"character; word", strokes:6, gif:null},
+    {c:"我", py:"wǒ", vi:"tôi", en:"I; me", strokes:7, gif:null},
+    {c:"不", py:"bù", vi:"không", en:"not; no", strokes:4, gif:null},
+    {c:"是", py:"shì", vi:"là", en:"to be", strokes:9, gif:null},
+    {c:"对", py:"duì", vi:"đúng; đối", en:"correct; toward", strokes:5, gif:null},
+    {c:"起", py:"qǐ", vi:"dậy; khởi", en:"to rise", strokes:10, gif:null},
+    {c:"没", py:"méi", vi:"không (có)", en:"not have", strokes:7, gif:null},
+    {c:"关", py:"guān", vi:"đóng; quan", en:"to close; relation", strokes:6, gif:null},
+    {c:"系", py:"xì", vi:"hệ; liên hệ", en:"system; relation", strokes:7, gif:null},
+    {c:"事", py:"shì", vi:"việc; sự", en:"matter; affair", strokes:8, gif:null},
+    {c:"很", py:"hěn", vi:"rất", en:"very", strokes:9, gif:null},
+    {c:"高", py:"gāo", vi:"cao", en:"tall; high", strokes:10, gif:null},
+    {c:"兴", py:"xìng", vi:"hứng; vui", en:"mood; interest", strokes:6, gif:null},
+    {c:"认", py:"rèn", vi:"nhận; biết", en:"to recognize", strokes:4, gif:null},
+    {c:"识", py:"shí", vi:"biết; thức", en:"to know", strokes:7, gif:null},
+    {c:"也", py:"yě", vi:"cũng", en:"also; too", strokes:3, gif:null}
+  ],
+  // ------- NGỮ PHÁP -------
+  grammar:{
+    point:"Trật tự từ cơ bản & cấu tạo tên người Trung Quốc",
+    intro:"Bài học có hai điểm ngữ pháp cơ bản: trật tự từ trong câu tiếng Hán (Chủ ngữ + Vị ngữ + Tân ngữ) và cách cấu tạo tên người Trung Quốc (Họ + Tên).",
+    blocks:[
+      {h:"1. Trật tự từ cơ bản: Chủ ngữ + Vị ngữ + Tân ngữ",
+       body:"Trật tự từ cơ bản trong tiếng Hán là: 主语 (Chủ ngữ) + 谓语 (Vị ngữ) + 宾语 (Tân ngữ). Ví dụ: 我 (chủ ngữ) 叫 (vị ngữ) 陈天中 (tân ngữ).",
+       formula:[["我 (Chủ ngữ)","tôi"],
+                ["叫 (Vị ngữ)","tên là"],
+                ["陈天中 (Tân ngữ)","Trần Thiên Trung"]],
+       ex:[{han:"你叫什么名字？",py:"Nǐ jiào shénme míngzi?",vi:"Bạn tên là gì?"},
+           {han:"我叫白家月。",py:"Wǒ jiào Bái Jiāyuè.",vi:"Tôi tên là Bạch Gia Nguyệt."},
+           {han:"我是学生。",py:"Wǒ shì xuésheng.",vi:"Tôi là học sinh."}]},
+      {h:"2. Cấu tạo tên người Trung Quốc: Họ + Tên",
+       body:"Tên người Trung Quốc gồm: 姓 (Họ) đứng trước + 名 (Tên) đứng sau. Ví dụ 李文: 李 là họ, 文 là tên; 陈天中: 陈 là họ, 天中 là tên.",
+       formula:[["李 + 文","họ Lý + tên Văn"],
+                ["白 + 家月","họ Bạch + tên Gia Nguyệt"],
+                ["陈 + 天中","họ Trần + tên Thiên Trung"]],
+       ex:[{han:"我叫李文。",py:"Wǒ jiào Lǐ Wén.",vi:"Tôi tên là Lý Văn."},
+           {han:"我叫白家月。",py:"Wǒ jiào Bái Jiāyuè.",vi:"Tôi tên là Bạch Gia Nguyệt."}]}
+    ]
+  },
+  // ------- BÀI ĐỌC (3 đoạn hội thoại) -------
+  texts:[
+    {title:"Khóa văn 1 — 课文 1", context:"Trong lớp học, thầy Vương Nhất Phi đang làm quen với học sinh.",
+     lines:[
+       {sp:"王一飞", sppy:"Wáng Yīfēi", han:"请问，你叫什么名字？", py:"Qǐngwèn, nǐ jiào shénme míngzi?", vi:"Cho hỏi, em tên là gì?"},
+       {sp:"陈天中", sppy:"Chén Tiānzhōng", han:"我叫陈天中。", py:"Wǒ jiào Chén Tiānzhōng.", vi:"Em tên là Trần Thiên Trung."}
+     ]},
+    {title:"Khóa văn 2 — 课文 2", context:"Trên sân trường, Trần Thiên Trung chào Bạch Gia Nguyệt nhưng nhận nhầm người.",
+     lines:[
+       {sp:"陈天中", sppy:"Chén Tiānzhōng", han:"你好，安妮！", py:"Nǐ hǎo, Ānnī!", vi:"Chào cậu, An Ni!"},
+       {sp:"白家月", sppy:"Bái Jiāyuè", han:"你好，陈天中！我不是安妮，我是白家月。", py:"Nǐ hǎo, Chén Tiānzhōng! Wǒ bú shì Ānnī, wǒ shì Bái Jiāyuè.", vi:"Chào cậu, Trần Thiên Trung! Mình không phải An Ni, mình là Bạch Gia Nguyệt."},
+       {sp:"陈天中", sppy:"Chén Tiānzhōng", han:"对不起！", py:"Duìbuqǐ!", vi:"Xin lỗi!"},
+       {sp:"白家月", sppy:"Bái Jiāyuè", han:"没关系！", py:"Méi guānxi!", vi:"Không sao!"}
+     ]},
+    {title:"Khóa văn 3 — 课文 3", context:"Trên sân trường, Lý Văn và Bạch Gia Nguyệt gặp nhau lần đầu.",
+     lines:[
+       {sp:"李文", sppy:"Lǐ Wén", han:"你好！我叫李文。", py:"Nǐ hǎo! Wǒ jiào Lǐ Wén.", vi:"Chào cậu! Mình tên là Lý Văn."},
+       {sp:"白家月", sppy:"Bái Jiāyuè", han:"你好！我叫白家月。", py:"Nǐ hǎo! Wǒ jiào Bái Jiāyuè.", vi:"Chào cậu! Mình tên là Bạch Gia Nguyệt."},
+       {sp:"李文", sppy:"Lǐ Wén", han:"很高兴认识你。", py:"Hěn gāoxìng rènshi nǐ.", vi:"Rất vui được làm quen với cậu."},
+       {sp:"白家月", sppy:"Bái Jiāyuè", han:"认识你我也很高兴。", py:"Rènshi nǐ wǒ yě hěn gāoxìng.", vi:"Được làm quen với cậu mình cũng rất vui."}
+     ]}
+  ],
+  tongue:[
+    {han:"七加一，再减一，加完减完等于几？", py:"Qī jiā yī, zài jiǎn yī, jiāwán jiǎnwán děngyú jǐ?", vi:"Bảy cộng một, rồi trừ một, cộng xong trừ xong bằng mấy?"},
+    {han:"加完减完还是七。", py:"Jiāwán jiǎnwán háishi qī.", vi:"Cộng xong trừ xong vẫn là bảy."}
+  ]
+};
