@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" data-lms-require="enrolled">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -216,7 +216,7 @@ kbd{background:var(--bg2);color:#fff;border-radius:6px;padding:1px 7px;font-size
 .speed-seg button.on{background:var(--accent);color:#fff}
 @media(max-width:640px){.sec-head h2{font-size:1.4em}.hz-detail .grid-frame,.canvas-wrap,.gifbox{width:200px;height:200px}.hint-char{font-size:135px}}
 </style>
-</head>
+  </head>
 <body>
 <!-- ============================== HEADER ============================== -->
 <header>
@@ -1647,5 +1647,7 @@ function init(){
 }
 document.addEventListener('DOMContentLoaded', init);
 </script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://learning-ecology.github.io/tracker.js"></script>
 </body>
 </html>
